@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "fullName": "Courtney Arnold",
+    "corporateEmail": "courtney.arnold@empresa.com",
+    "sector": "Operations",
+    "admisionDate": "2021-02-15",
+    "monthlySalary": 8033,
+    "country": "El Salvador"
+  },
+  {
+    "id": 2,
+    "fullName": "Desiree Morales",
+    "corporateEmail": "desiree.morales@empresa.com",
+    "sector": "Engineering",
+    "admisionDate": "2025-02-06",
+    "monthlySalary": 1045,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 3,
+    "fullName": "Kristie Williams",
+    "corporateEmail": "kristie.williams@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2021-12-31",
+    "monthlySalary": 1839,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 4,
+    "fullName": "Michael Taylor",
+    "corporateEmail": "michael.taylor@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2022-10-26",
+    "monthlySalary": 6549,
+    "country": "Guatemala"
+  },
+  {
+    "id": 5,
+    "fullName": "Lauren Douglas",
+    "corporateEmail": "lauren.douglas@empresa.com",
+    "sector": "Operations",
+    "admisionDate": "2020-11-16",
+    "monthlySalary": 7682,
+    "country": "Honduras"
+  },
+  {
+    "id": 6,
+    "fullName": "Yolanda Watson",
+    "corporateEmail": "yolanda.watson@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2019-10-01",
+    "monthlySalary": 3762,
+    "country": "Panamá"
+  },
+  {
+    "id": 7,
+    "fullName": "Monique Kelley",
+    "corporateEmail": "monique.kelley@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2017-02-28",
+    "monthlySalary": 5565,
+    "country": "Honduras"
+  },
+  {
+    "id": 8,
+    "fullName": "Frances Hoffman",
+    "corporateEmail": "frances.hoffman@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2020-03-27",
+    "monthlySalary": 5682,
+    "country": "El Salvador"
+  },
+  {
+    "id": 9,
+    "fullName": "Gail Thompson",
+    "corporateEmail": "gail.thompson@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2020-03-21",
+    "monthlySalary": 1671,
+    "country": "El Salvador"
+  },
+  {
+    "id": 10,
+    "fullName": "Stephanie Holloway",
+    "corporateEmail": "stephanie.holloway@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2023-04-12",
+    "monthlySalary": 9253,
+    "country": "Panamá"
+  },
+  {
+    "id": 11,
+    "fullName": "Jeremy Fletcher",
+    "corporateEmail": "jeremy.fletcher@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2018-06-06",
+    "monthlySalary": 980,
+    "country": "El Salvador"
+  },
+  {
+    "id": 12,
+    "fullName": "Destiny Kramer",
+    "corporateEmail": "destiny.kramer@empresa.com",
+    "sector": "Operations",
+    "admisionDate": "2016-10-04",
+    "monthlySalary": 9466,
+    "country": "El Salvador"
+  },
+  {
+    "id": 13,
+    "fullName": "Heather Mason",
+    "corporateEmail": "heather.mason@empresa.com",
+    "sector": "Operations",
+    "admisionDate": "2021-08-18",
+    "monthlySalary": 7413,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 14,
+    "fullName": "Amanda Evans",
+    "corporateEmail": "amanda.evans@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2016-10-07",
+    "monthlySalary": 7769,
+    "country": "El Salvador"
+  },
+  {
+    "id": 15,
+    "fullName": "Daniel Cooper",
+    "corporateEmail": "daniel.cooper@empresa.com",
+    "sector": "Operations",
+    "admisionDate": "2020-11-05",
+    "monthlySalary": 3253,
+    "country": "Honduras"
+  },
+  {
+    "id": 16,
+    "fullName": "Bryan Harris",
+    "corporateEmail": "bryan.harris@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2020-01-24",
+    "monthlySalary": 4916,
+    "country": "Guatemala"
+  },
+  {
+    "id": 17,
+    "fullName": "Christine Parker",
+    "corporateEmail": "christine.parker@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2024-03-08",
+    "monthlySalary": 4760,
+    "country": "Panamá"
+  },
+  {
+    "id": 18,
+    "fullName": "Jonathan Hubbard",
+    "corporateEmail": "jonathan.hubbard@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2019-02-25",
+    "monthlySalary": 2824,
+    "country": "Guatemala"
+  },
+  {
+    "id": 19,
+    "fullName": "Bethany Farmer MD",
+    "corporateEmail": "bethany.md@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2016-12-07",
+    "monthlySalary": 9286,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 20,
+    "fullName": "Stephanie Johnson",
+    "corporateEmail": "stephanie.johnson@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2022-08-30",
+    "monthlySalary": 5017,
+    "country": "Honduras"
+  },
+  {
+    "id": 21,
+    "fullName": "Kyle Frank",
+    "corporateEmail": "kyle.frank@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2023-08-05",
+    "monthlySalary": 1710,
+    "country": "Guatemala"
+  },
+  {
+    "id": 22,
+    "fullName": "Gregory Thomas",
+    "corporateEmail": "gregory.thomas@empresa.com",
+    "sector": "Operations",
+    "admisionDate": "2024-09-04",
+    "monthlySalary": 7687,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 23,
+    "fullName": "Lance Orozco",
+    "corporateEmail": "lance.orozco@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2024-02-26",
+    "monthlySalary": 2215,
+    "country": "El Salvador"
+  },
+  {
+    "id": 24,
+    "fullName": "Kyle Cameron",
+    "corporateEmail": "kyle.cameron@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2019-03-09",
+    "monthlySalary": 5223,
+    "country": "Guatemala"
+  },
+  {
+    "id": 25,
+    "fullName": "Sandra Cohen",
+    "corporateEmail": "sandra.cohen@empresa.com",
+    "sector": "Operations",
+    "admisionDate": "2017-10-31",
+    "monthlySalary": 7937,
+    "country": "Panamá"
+  },
+  {
+    "id": 26,
+    "fullName": "Jeffrey Estrada",
+    "corporateEmail": "jeffrey.estrada@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2018-05-26",
+    "monthlySalary": 6106,
+    "country": "El Salvador"
+  },
+  {
+    "id": 27,
+    "fullName": "Jacob Martinez",
+    "corporateEmail": "jacob.martinez@empresa.com",
+    "sector": "Operations",
+    "admisionDate": "2018-06-24",
+    "monthlySalary": 9995,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 28,
+    "fullName": "Wendy Camacho",
+    "corporateEmail": "wendy.camacho@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2018-04-25",
+    "monthlySalary": 8904,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 29,
+    "fullName": "Christina Perry",
+    "corporateEmail": "christina.perry@empresa.com",
+    "sector": "Operations",
+    "admisionDate": "2019-01-12",
+    "monthlySalary": 9021,
+    "country": "El Salvador"
+  },
+  {
+    "id": 30,
+    "fullName": "Cindy Byrd",
+    "corporateEmail": "cindy.byrd@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2021-01-20",
+    "monthlySalary": 1337,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 31,
+    "fullName": "Jason Hamilton",
+    "corporateEmail": "jason.hamilton@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2016-01-05",
+    "monthlySalary": 9244,
+    "country": "Guatemala"
+  },
+  {
+    "id": 32,
+    "fullName": "Eric Sullivan",
+    "corporateEmail": "eric.sullivan@empresa.com",
+    "sector": "Operations",
+    "admisionDate": "2023-01-21",
+    "monthlySalary": 6544,
+    "country": "Honduras"
+  },
+  {
+    "id": 33,
+    "fullName": "Heather Torres",
+    "corporateEmail": "heather.torres@empresa.com",
+    "sector": "Engineering",
+    "admisionDate": "2019-10-09",
+    "monthlySalary": 9417,
+    "country": "Panamá"
+  },
+  {
+    "id": 34,
+    "fullName": "Haley Torres",
+    "corporateEmail": "haley.torres@empresa.com",
+    "sector": "Engineering",
+    "admisionDate": "2023-03-26",
+    "monthlySalary": 7674,
+    "country": "Guatemala"
+  },
+  {
+    "id": 35,
+    "fullName": "Nancy Gonzalez",
+    "corporateEmail": "nancy.gonzalez@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2022-11-04",
+    "monthlySalary": 2854,
+    "country": "El Salvador"
+  },
+  {
+    "id": 36,
+    "fullName": "Sydney Peterson",
+    "corporateEmail": "sydney.peterson@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2017-12-14",
+    "monthlySalary": 5452,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 37,
+    "fullName": "Debbie Hammond",
+    "corporateEmail": "debbie.hammond@empresa.com",
+    "sector": "Engineering",
+    "admisionDate": "2018-12-27",
+    "monthlySalary": 7996,
+    "country": "Guatemala"
+  },
+  {
+    "id": 38,
+    "fullName": "Elizabeth Ferrell",
+    "corporateEmail": "elizabeth.ferrell@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2020-02-11",
+    "monthlySalary": 7866,
+    "country": "Honduras"
+  },
+  {
+    "id": 39,
+    "fullName": "Daniel Taylor",
+    "corporateEmail": "daniel.taylor@empresa.com",
+    "sector": "Engineering",
+    "admisionDate": "2018-02-13",
+    "monthlySalary": 9382,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 40,
+    "fullName": "Jeremy Ibarra",
+    "corporateEmail": "jeremy.ibarra@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2019-12-14",
+    "monthlySalary": 9767,
+    "country": "El Salvador"
+  },
+  {
+    "id": 41,
+    "fullName": "Lisa Kim",
+    "corporateEmail": "lisa.kim@empresa.com",
+    "sector": "Engineering",
+    "admisionDate": "2021-06-25",
+    "monthlySalary": 3232,
+    "country": "Panamá"
+  },
+  {
+    "id": 42,
+    "fullName": "Mrs. Monique Walton MD",
+    "corporateEmail": "mrs..md@empresa.com",
+    "sector": "Engineering",
+    "admisionDate": "2019-09-22",
+    "monthlySalary": 8127,
+    "country": "El Salvador"
+  },
+  {
+    "id": 43,
+    "fullName": "Briana Zuniga",
+    "corporateEmail": "briana.zuniga@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2021-02-03",
+    "monthlySalary": 8780,
+    "country": "Guatemala"
+  },
+  {
+    "id": 44,
+    "fullName": "Louis Marquez",
+    "corporateEmail": "louis.marquez@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2020-09-09",
+    "monthlySalary": 5762,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 45,
+    "fullName": "Debra Weber",
+    "corporateEmail": "debra.weber@empresa.com",
+    "sector": "Engineering",
+    "admisionDate": "2021-07-09",
+    "monthlySalary": 7887,
+    "country": "Panamá"
+  },
+  {
+    "id": 46,
+    "fullName": "Heather Wilson",
+    "corporateEmail": "heather.wilson@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2021-11-03",
+    "monthlySalary": 6121,
+    "country": "Costa Rica"
+  },
+  {
+    "id": 47,
+    "fullName": "Keith Davis",
+    "corporateEmail": "keith.davis@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2020-07-18",
+    "monthlySalary": 1576,
+    "country": "Honduras"
+  },
+  {
+    "id": 48,
+    "fullName": "Shannon Warren",
+    "corporateEmail": "shannon.warren@empresa.com",
+    "sector": "HR",
+    "admisionDate": "2017-06-03",
+    "monthlySalary": 3817,
+    "country": "Guatemala"
+  },
+  {
+    "id": 49,
+    "fullName": "Diane Fowler",
+    "corporateEmail": "diane.fowler@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2023-02-22",
+    "monthlySalary": 3083,
+    "country": "Honduras"
+  },
+  {
+    "id": 50,
+    "fullName": "Christopher Hill",
+    "corporateEmail": "christopher.hill@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2023-02-19",
+    "monthlySalary": 2271,
+    "country": "Guatemala"
+  }
+]
