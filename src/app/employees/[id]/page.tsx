@@ -4,6 +4,7 @@ import UsersLayout from "@/components/layout/UsersLayout";
 import EmployeeDetails from "@/components/employee/EmployeeDetails";
 import { Employee } from "@/types/personal";
 import { database } from "@/utils/database";
+import { apiRebu } from "@/service/api.service";
 
 export const revalidate = 60;
 
@@ -27,9 +28,7 @@ interface EmployeePageProps {
 
 const EmployeePage = async ({ params }: EmployeePageProps) => {
   try {
-    console.log(params.id)
-    const employee = await database.getEmployeeById(Number(params.id));
-    
+    const employee = await apiRebu.getEmployeeById(params.id);
     if (!employee) throw new Error();
     return (
       <UsersLayout title="Detalles del Empleado">
@@ -37,7 +36,7 @@ const EmployeePage = async ({ params }: EmployeePageProps) => {
       </UsersLayout>
     );
   } catch (error: any) {
-    console.log(error)
+    console.log(error);
     notFound();
   }
 };

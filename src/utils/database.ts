@@ -1,43 +1,22 @@
 import { employeesMock } from "@/mock/employees";
 import { Employee } from "@/types/personal";
-import { unstable_cache } from "next/cache";
 
 const simulateApiDelay = () => new Promise(resolve => setTimeout(resolve, 100));
 
-// Cache persistente para empleados
-const getCachedEmployees = unstable_cache(
-  async () => [...employeesMock],
-  ['employees-data'],
-  { 
-    tags: ['employees'],
-    revalidate: false // No expira automáticamente
-  }
-);
-
-let employeesCache: Employee[] = [];
-
-// Función para inicializar cache
-async function initializeCache() {
-  if (employeesCache.length === 0) {
-    employeesCache = await getCachedEmployees();
-  }
-}
+let employeesCache: Employee[] = [...employeesMock];
 
 export const database = {
   async getEmployees(): Promise<Employee[]> {
-    await initializeCache();
     await simulateApiDelay();
     return employeesCache;
   },
 
   async getEmployeeById(id: number): Promise<Employee | null> {
-    await initializeCache();
     await simulateApiDelay();
     return employeesCache.find(emp => emp.id === id) || null;
   },
 
   async createEmployee(employee: Omit<Employee, 'id'>): Promise<Employee> {
-    await initializeCache();
     await simulateApiDelay();
     
     const newId = Math.max(...employeesCache.map(emp => emp.id), 0) + 1;
