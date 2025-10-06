@@ -37,9 +37,6 @@ npm run dev          # Desarrollo
 npm run build        # Construcción
 npm run start        # Producción
 npm run lint         # Linting
-npm test            # Tests unitarios
-npm run test:watch  # Tests en modo watch
-npm run test:coverage # Tests con cobertura
 ```
 
 ### Credenciales de acceso
@@ -177,18 +174,3 @@ src/
 └── data/                 # Datos JSON simulados
 ```
 
-## 🚀 Despliegue
-
-### **Vercel (Recomendado)**
-```bash
-npm run build
-# Conectar con Vercel y desplegar
-```
-
-### **Docker**
-```bash
-docker build -t empleados-app .
-docker run -p 3000:3000 empleados-app
-```
-
----
