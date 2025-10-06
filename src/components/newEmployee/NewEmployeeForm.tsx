@@ -1,17 +1,19 @@
 "use client";
 import RHFInput from "@/components/common/RhfInput";
 import RHFSelect from "@/components/common/RhfSelect";
-import {  EmployeeForm } from "@/types/personal";
+import { EmployeeForm } from "@/types/personal";
 import React, { FC, useEffect, useRef, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sectors } from "@/mock/sector";
 import { countriesMock } from "@/mock/countries";
-import Link from "next/link";
 import { Button } from "@radix-ui/themes";
 import { newEmployeeSchema } from "@/schemas/new-employee.schema";
 import z from "zod";
 import { useToast } from "@/context/ToastContext";
+import { createEmployeeAction, updateEmployeeAction } from "@/app/actions";
+import { useFormDraft } from "@/hooks/useFormDraft";
+import { useRouter } from "next/navigation";
 
 type Props = {
   defaultValues: EmployeeForm;
@@ -23,42 +25,78 @@ const NewEmployeeForm: FC<Props> = ({ defaultValues, isEdit = false }) => {
   const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const { showToast } = useToast();
-
+  const router = useRouter();
   const methods = useForm({
     defaultValues,
     resolver: zodResolver(newEmployeeSchema),
     mode: "onChange",
   });
+
   const {
-    handleSubmit,   
-    formState: { isDirty, isValid, errors },
+    handleSubmit,
+    watch,
+    reset,
+    formState: { isDirty, isValid },
   } = methods;
-  console.log(errors);
+  const formValues = watch();
+
+  const { clearDraft } = useFormDraft({
+    key: "employee-form",
+    isEdit,
+    reset,
+    formValues,
+    isDirty,
+  });
+
   useEffect(() => {
-    // hacemos foco en el primer input
+    // Hacer foco en el primer input
     if (inputRef.current) inputRef.current.focus();
   }, []);
 
   const onSubmit = async (data: FormValue) => {
-    console.log(data);
     setIsLoading(true);
+
     try {
-      showToast({
-        severity: "success",
-        summary: "Excelente",
-        detail: "Empleado creado con éxito",
-      });
+      if (isEdit) {
+        await updateEmployeeAction(defaultValues.id?.toString() || "", {
+          id: defaultValues.id,
+          ...data,
+        });
+        showToast({
+          severity: "success",
+          summary: "Empleado actualizado",
+          detail: "El empleado ha sido actualizado correctamente",
+        });
+        router.push(`/employees/${defaultValues.id}`);
+        clearDraft();
+      } else {
+        await createEmployeeAction(data);
+        showToast({
+          severity: "success",
+          summary: "Empleado creado",
+          detail: "El empleado ha sido creado correctamente",
+        });
+        clearDraft();
+        reset(defaultValues);
+        router.push(`/employees`);
+      }
     } catch (error) {
-      console.log(error);
+      console.error("Error al procesar empleado:", error);
       showToast({
         severity: "error",
         summary: "Error",
-        detail: "Ha ocurrido un error al eliminar el empleado",
+        detail: isEdit
+          ? "Ha ocurrido un error al actualizar el empleado"
+          : "Ha ocurrido un error al crear el empleado",
       });
     }
+
     setIsLoading(false);
   };
-
+  const onCancel = () => {
+    clearDraft();
+    router.push("/employees");
+  };
   return (
     <section className="mt-4">
       <FormProvider {...methods}>
@@ -68,7 +106,6 @@ const NewEmployeeForm: FC<Props> = ({ defaultValues, isEdit = false }) => {
               <RHFInput
                 name="fullName"
                 label="Nombre completo"
-                disabled={isEdit}
                 isRequired
                 className="w-full"
                 ref={inputRef}
@@ -116,16 +153,16 @@ const NewEmployeeForm: FC<Props> = ({ defaultValues, isEdit = false }) => {
               />
             </div>
           </section>
-          <div className="w-full flex justify-end gap-3 mt-4">
-            <Link href={"/employees"}>
-              <Button
-                disabled={isLoading}
-                color="gray"
-                className="rounded-md p-5"
-              >
-                Cancelar
-              </Button>
-            </Link>
+          <div className="w-full flex gap-3 justify-end items-center mt-4">
+            <Button
+              disabled={isLoading}
+              color="gray"
+              className="rounded-md p-5"
+              type="button"
+              onClick={onCancel}
+            >
+              Cancelar
+            </Button>
             <Button
               type="submit"
               color="green"

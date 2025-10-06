@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { database } from "@/utils/database";
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
-  console.log(req)
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
   try {
     const employeeId = parseInt(params.id);
 
@@ -32,6 +33,8 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
   }
 }
 export async function PUT(req: NextRequest) {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
   try {
     const body = await req.json();
     const { id, ...updateData } = body;
@@ -54,18 +57,18 @@ export async function PUT(req: NextRequest) {
 
     return NextResponse.json(updatedEmployee, { status: 200 });
   } catch (error) {
-    console.error('Error updating employee:', error);
+    console.error('Error actualizando el empleado:', error);
     return NextResponse.json(
       { error: "Error interno del servidor" },
       { status: 500 }
     );
   }
 }
-export async function DELETE(req: NextRequest) {
-  try {
-    const { searchParams } = new URL(req.url);
-    const id = searchParams.get('id');
+export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
 
+  try {
+  
+    const id = params.id;
     if (!id) {
       return NextResponse.json(
         { error: "ID del empleado es requerido" },

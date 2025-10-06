@@ -5,20 +5,20 @@ import { buildEmployeesParamUrl } from "@/utils/api";
 
 const apiClient = createApiClient();
 export const apiRebu = {
-  async createPersonal(user: User) {
+  async createEmployee(employee: Omit<Employee, "id">) {
     try {
-      const { data } = await apiClient.post(`${URLS.PERSONAL}`, user);
+      const { data } = await apiClient.post(`/api/employees`, employee);
       console.log(data);
       return data;
     } catch (error) {
       console.log(error);
-      throw new Error("Error al cetrar usuario");
+      throw new Error("Error al crear usuario");
     }
   },
 
-  async deletePersonal(userId: string) {
+  async deleteEmployee(employeeId: string) {
     try {
-      const { data } = await apiClient.delete(`${URLS.PERSONAL}/${userId}`);
+      const { data } = await apiClient.delete(`/api/employees/${employeeId}`);
       return data;
     } catch (error) {
       console.log(error);
@@ -26,7 +26,7 @@ export const apiRebu = {
     }
   },
 
-  async getEmployeeById(employeeId: string) {
+  async getEmployeeById(employeeId: string):Promise<Employee> {
     try {
       const { data } = await apiClient.get(`/api/employees/${employeeId}`);
       return data;
@@ -82,7 +82,7 @@ export const apiRebu = {
     searchTerm?: string,
     sector?: string[],
     country?: string[]
-  ): Promise<any> {
+  ) {
     console.log("*********** GET PERSONAL TOTAL************");
     const url = buildEmployeesParamUrl({ searchTerm, sector, country });
     try {

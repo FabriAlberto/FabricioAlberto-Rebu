@@ -6,7 +6,6 @@ export async function GET(req: NextRequest) {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   let employees: Employee[] = await database.getEmployees();
-  console.log(employees)
   const { searchParams } = new URL(req.url);
   const page = parseInt(searchParams.get("page") || "1", 10);
   const limit = parseInt(searchParams.get("limit") || "10", 10);
@@ -65,4 +64,25 @@ export async function GET(req: NextRequest) {
   };
 
   return NextResponse.json(response, { status: 200 });
+}
+export async function POST(req: NextRequest) {
+  try {
+    const body = await req.json();
+    const newEmployee = await database.createEmployee({
+      fullName: body.fullName,
+      corporateEmail: body.corporateEmail,
+      sector: body.sector,
+      admisionDate: body.admisionDate,
+      monthlySalary: body.monthlySalary,
+      country: body.country
+    });
+  
+    return NextResponse.json(newEmployee, { status: 201 });
+  } catch (error) {
+    console.error('Error creating employee:', error);
+    return NextResponse.json(
+      { error: "Error interno del servidor" },
+      { status: 500 }
+    );
+  }
 }

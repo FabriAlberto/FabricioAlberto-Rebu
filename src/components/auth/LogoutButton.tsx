@@ -19,8 +19,9 @@ export default function LogoutButton() {
       color="red" 
       size="2"
       onClick={handleLogout}
+      className='cursor-pointer rounded-md'
     >
-      <Text size="2">Cerrar Sesión</Text>
+      <Text size="2">Cerrar sesión</Text>
     </Button>
   );
 }

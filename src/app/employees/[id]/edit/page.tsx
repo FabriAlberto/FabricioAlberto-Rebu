@@ -16,7 +16,13 @@ const EditUserPage = async ({ params }: EditUserPageProps) => {
     return (
       <UsersLayout title="Editar Empleado">
         <div className="mt-4">
-          <NewEmployeeForm defaultValues={employee} isEdit />
+          <NewEmployeeForm
+            defaultValues={{
+              ...employee,
+              monthlySalary: `${employee.monthlySalary}`,
+            }}
+            isEdit
+          />
         </div>
       </UsersLayout>
     );

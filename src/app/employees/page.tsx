@@ -1,6 +1,5 @@
 import Filter from "@/components/home/table/filters/Filter";
 import TableSkeleton from "@/components/home/table/TableSkeleton";
-import UserTable from "@/components/home/table/UserTable";
 import { getCachedPersonalTotal } from "@/utils/cache";
 import { Suspense } from "react";
 import UsersLayout from "@/components/layout/UsersLayout";
@@ -9,6 +8,7 @@ import EmployeesTablePaginator from "@/components/home/table/UserTablePaginatorC
 import { Button } from "@radix-ui/themes";
 import { PlusIcon } from "lucide-react";
 import Link from "next/link";
+import EmployeeTable from "@/components/home/table/EmployeeTable";
 
 export default async function EmployeesPage({
   searchParams,
@@ -37,7 +37,7 @@ export default async function EmployeesPage({
       title="Empleados"
       actionChildren={
         <Link href={'/employees/new'}>
-        <Button color="green" className="rounded-md p-5">
+        <Button color="green" className="rounded-md p-5 cursor-pointer">
           Crear empleado <PlusIcon />{" "}
         </Button>
         </Link>
@@ -56,7 +56,7 @@ export default async function EmployeesPage({
           />
         }
       >
-        <UserTable
+        <EmployeeTable
           query={query}
           currentPage={page}
           limit={limit}

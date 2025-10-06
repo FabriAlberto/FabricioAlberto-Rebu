@@ -12,7 +12,7 @@ type Props = {
   employees: Employee[];
 };
 
-const UserTableClient: React.FC<Props> = ({ employees }) => {
+const EmployeeTableClient: React.FC<Props> = ({ employees }) => {
   const { searchParams, handleSort } = useTableNavigation();
   const router = useRouter();
   const sort = searchParams.get("sort") || "";
@@ -113,4 +113,4 @@ const UserTableClient: React.FC<Props> = ({ employees }) => {
   );
 };
 
-export default UserTableClient;
+export default EmployeeTableClient;

@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const newEmployeeSchema = z.object({
-  id: z.number().int().positive(),
+  /* id: z.number().int().positive(), */
 
   fullName: z.string().min(3, {
     message: "El nombre completo debe tener al menos 3 caracteres.",

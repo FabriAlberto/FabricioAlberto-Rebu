@@ -5,6 +5,7 @@ import { useToast } from "@/context/ToastContext";
 import { AlertDialog } from "radix-ui";
 import { Button, IconButton } from "@radix-ui/themes";
 import { TrashIcon } from "@radix-ui/react-icons";
+import { deleteEmployeeAction } from "@/app/actions";
 type Props = {
   employee: Employee;
 };
@@ -14,11 +15,11 @@ const RemoveUserButton: FC<Props> = ({ employee }) => {
 
   const accept = async () => {
     try {
-      /* await deleteUserAction(employee.id); */
+      await deleteEmployeeAction(employee.id.toString());
       showToast({
         severity: "success",
         summary: "Eliminado",
-        detail: `Usuario "${employee.fullName}" eliminado con éxito.`,
+        detail: `empleado "${employee.fullName}" eliminado con éxito.`,
         life: 3000,
       });
       setOpen(false);
@@ -27,7 +28,7 @@ const RemoveUserButton: FC<Props> = ({ employee }) => {
       showToast({
         severity: "error",
         summary: "Error",
-        detail: `Ocurrio un error al intentar eliminar el usuario, por favor intente nuevamente más tarde.`,
+        detail: `Ocurrio un error al intentar eliminar el empleado, por favor intente nuevamente más tarde.`,
         life: 3000,
       });
     }
@@ -48,14 +49,14 @@ const RemoveUserButton: FC<Props> = ({ employee }) => {
           <AlertDialog.Overlay className="fixed inset-0 bg-black/50" />
           <AlertDialog.Content className="fixed left-1/2 top-1/2 w-11/12 max-w-md -translate-x-1/2 -translate-y-1/2 rounded-md bg-white p-4 shadow-xl">
             <AlertDialog.Title className="text-lg font-semibold">
-              Eliminar usuario
+              Eliminar empleado
             </AlertDialog.Title>
             <AlertDialog.Description className="mt-2 text-sm text-gray-600">
-              Estas seguro de eliminar el usuario "{employee.fullName}"?
+              Estas seguro de eliminar el empleado "{employee.fullName}"?
             </AlertDialog.Description>
             <div className="mt-4 flex justify-end gap-2">
               <AlertDialog.Cancel asChild>
-                <Button className=" cursor-pointer rounded px-3 py-1 " color="gray" type="reset">
+                <Button className=" cursor-pointer rounded-md px-3 py-1 " color="gray" type="reset">
                   Cancelar
                 </Button>
               </AlertDialog.Cancel>
@@ -63,7 +64,7 @@ const RemoveUserButton: FC<Props> = ({ employee }) => {
                 <Button
                   onClick={accept}
                   color="red"
-                  className="rounded px-3 py-1 cursor-pointer "
+                  className="rounded-md px-3 py-1 cursor-pointer "
                 >
                   Eliminar
                 </Button>

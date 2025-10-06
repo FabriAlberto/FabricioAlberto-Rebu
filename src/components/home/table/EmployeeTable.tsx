@@ -1,6 +1,6 @@
 import React from "react";
 import { apiRebu } from "@/service/api.service";
-import UserTableClient from "./UserTableClient";
+import EmployeeTableClient from "./EmployeeTableClient";
 
 export const revalidate = 60 * 60 * 24;
 
@@ -14,7 +14,7 @@ type Props = {
   country?: string[];
 };
 //Usamos este server component solo para poder obtener la información desde el servidor y aprovechar el suspense + fallback
-export default async function UserTable({
+export default async function EmployeeTable({
   query,
   currentPage,
   limit,
@@ -32,5 +32,5 @@ export default async function UserTable({
     sector,
     country
   );
-  return <UserTableClient employees={response.employees} />;
+  return <EmployeeTableClient employees={response.employees} />;
 }
