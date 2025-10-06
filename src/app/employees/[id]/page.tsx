@@ -5,7 +5,7 @@ import EmployeeDetails from "@/components/employee/EmployeeDetails";
 import { Employee } from "@/types/personal";
 import { database } from "@/utils/database";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {

@@ -8,8 +8,9 @@ export async function createEmployeeAction(employee: Omit<Employee, "id">) {
   try {
     await apiRebu.createEmployee(employee);
 
+    // Revalidar páginas estáticas
     revalidatePath("/employees");
-    revalidatePath("/employees/[id]", "page");
+    revalidatePath("/employees/[id]","page");
 
     return { success: true, message: "Empleado creado correctamente" };
   } catch (err) {
