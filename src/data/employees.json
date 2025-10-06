@@ -448,5 +448,14 @@
     "admisionDate": "2023-02-19",
     "monthlySalary": 2271,
     "country": "Guatemala"
+  },
+  {
+    "id": 52,
+    "fullName": "Hugo alberto",
+    "corporateEmail": "hugoa@empresa.com",
+    "sector": "Sales",
+    "admisionDate": "2025-12-10",
+    "monthlySalary": 1500,
+    "country": "Costa Rica"
   }
 ]
