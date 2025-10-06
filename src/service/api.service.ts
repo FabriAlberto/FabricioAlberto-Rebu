@@ -1,6 +1,5 @@
-import { Employee, EmployeesResponse, User } from "@/types/personal";
+import { Employee, EmployeesResponse } from "@/types/personal";
 import { createApiClient } from "./api-client.service";
-import { URLS } from "@/utils/service";
 import { buildEmployeesParamUrl } from "@/utils/api";
 
 const apiClient = createApiClient();
