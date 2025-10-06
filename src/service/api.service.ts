@@ -1,12 +1,11 @@
 import { Employee, EmployeesResponse } from "@/types/personal";
-import { createApiClient } from "./api-client.service";
+import { createApiClient} from "./api-client.service";
 import { buildEmployeesParamUrl } from "@/utils/api";
 
-const apiClient = createApiClient();
 export const apiRebu = {
   async createEmployee(employee: Omit<Employee, "id">) {
     try {
-      const { data } = await apiClient.post(`/api/employees`, employee);
+      const { data } = await createApiClient().post(`/api/employees`, employee);
       return data;
     } catch (error) {
       console.log(error);
@@ -16,7 +15,7 @@ export const apiRebu = {
 
   async deleteEmployee(employeeId: string) {
     try {
-      const { data } = await apiClient.delete(`/api/employees/${employeeId}`);
+      const { data } = await createApiClient().delete(`/api/employees/${employeeId}`);
       return data;
     } catch (error) {
       console.log(error);
@@ -26,7 +25,7 @@ export const apiRebu = {
 
   async getEmployeeById(employeeId: string):Promise<Employee> {
     try {
-      const { data } = await apiClient.get(`/api/employees/${employeeId}`);
+      const { data } = await createApiClient().get(`/api/employees/${employeeId}`);
       return data;
     } catch (error: any) {
       console.error("Axios error:", error);
@@ -36,7 +35,7 @@ export const apiRebu = {
 
   async updateEmployeeById(employeeId: string, employee: Employee) {
     try {
-      const { data } = await apiClient.put(
+      const { data } = await createApiClient().put(
         `/api/employees/${employeeId}`,
         employee
       );
@@ -67,7 +66,7 @@ export const apiRebu = {
     });
     console.log(url);
     try {
-      const { data } = await apiClient.get<EmployeesResponse>(
+      const { data } = await createApiClient().get<EmployeesResponse>(
         `/api/employees${url}`
       );
       return data;
@@ -84,7 +83,7 @@ export const apiRebu = {
     console.log("*********** GET PERSONAL TOTAL************");
     const url = buildEmployeesParamUrl({ searchTerm, sector, country });
     try {
-      const { data } = await apiClient.get<{ total: number }>(
+      const { data } = await createApiClient().get<{ total: number }>(
         `/api/employees/total${url}`
       );
       return data.total;
