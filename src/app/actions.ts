@@ -2,12 +2,15 @@
 
 import { apiRebu } from "@/service/api.service";
 import { Employee } from "@/types/personal";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 export async function createEmployeeAction(employee: Omit<Employee, "id">) {
   try {
     await apiRebu.createEmployee(employee);
 
+    // Revalidar cache persistente
+    revalidateTag("employees");
+    
     // Revalidar páginas estáticas
     revalidatePath("/employees");
     revalidatePath("/employees/[id]","page");
