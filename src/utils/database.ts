@@ -13,6 +13,7 @@ export const database = {
 
   async getEmployeeById(id: number): Promise<Employee | null> {
     await simulateApiDelay();
+    console.log(employeesCache)
     return employeesCache.find(emp => emp.id === id) || null;
   },
 

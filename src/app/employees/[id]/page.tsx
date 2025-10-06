@@ -6,7 +6,6 @@ import { Employee } from "@/types/personal";
 import { database } from "@/utils/database";
 
 export const revalidate = 60;
-export const dynamicParams = true;
 
 export async function generateStaticParams() {
   try {
@@ -28,7 +27,9 @@ interface EmployeePageProps {
 
 const EmployeePage = async ({ params }: EmployeePageProps) => {
   try {
+    console.log(params.id)
     const employee = await database.getEmployeeById(Number(params.id));
+    
     if (!employee) throw new Error();
     return (
       <UsersLayout title="Detalles del Empleado">
