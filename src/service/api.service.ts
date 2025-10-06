@@ -92,4 +92,14 @@ export const apiRebu = {
       throw new Error(`${error}`);
     }
   },
+
+  async validateEmail(email: string): Promise<{ isValid: boolean; message: string }> {
+    try {
+      const { data } = await createApiClient().post(`/api/validate-email`, { email });
+      return data;
+    } catch (error) {
+      console.log(error);
+      throw new Error("Error al validar email");
+    }
+  },
 };

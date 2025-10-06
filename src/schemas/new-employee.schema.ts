@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { apiRebu } from "@/service/api.service";
 
 export const newEmployeeSchema = z.object({
   /* id: z.number().int().positive(), */
@@ -13,6 +14,21 @@ export const newEmployeeSchema = z.object({
     .email("Debe ser un correo válido con el dominio @empresa.com")
     .refine((val) => val.endsWith("@empresa.com"), {
       message: "El correo debe tener el dominio @empresa.com",
+    })
+    .refine(async (email) => {
+      if (!email || !email.includes("@empresa.com")) {
+        return true; 
+      }
+      
+      try {
+        const result = await apiRebu.validateEmail(email);
+        return result.isValid;
+      } catch (error) {
+        console.log(error)
+        return false;
+      }
+    }, {
+      message: "Este correo electrónico ya está registrado",
     }),
 
   sector: z.string().min(1, "El departamento es obligatorio"),

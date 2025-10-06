@@ -3,8 +3,9 @@ import { Employee, EmployeesResponse } from "@/types/personal";
 import { database } from "@/utils/database";
 
 export async function GET(req: NextRequest) {
+  console.log('***********GET EMPLOYEES************')
   await new Promise((resolve) => setTimeout(resolve, 1000));
-
+  
   let employees: Employee[] = await database.getEmployees();
   const { searchParams } = new URL(req.url);
   const page = parseInt(searchParams.get("page") || "1", 10);

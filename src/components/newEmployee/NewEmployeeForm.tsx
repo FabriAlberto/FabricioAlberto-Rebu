@@ -30,13 +30,15 @@ const NewEmployeeForm: FC<Props> = ({ defaultValues, isEdit = false }) => {
     defaultValues,
     resolver: zodResolver(newEmployeeSchema),
     mode: "onChange",
+    reValidateMode: "onChange",
+    shouldUnregister: false,
   });
 
   const {
     handleSubmit,
     watch,
     reset,
-    formState: { isDirty, isValid },
+    formState: { isDirty, isValid, isSubmitting },
   } = methods;
   const formValues = watch();
 
@@ -49,9 +51,9 @@ const NewEmployeeForm: FC<Props> = ({ defaultValues, isEdit = false }) => {
   });
 
   useEffect(() => {
-    // Hacer foco en el primer input
     if (inputRef.current) inputRef.current.focus();
   }, []);
+
 
   const onSubmit = async (data: FormValue) => {
     setIsLoading(true);
@@ -167,9 +169,9 @@ const NewEmployeeForm: FC<Props> = ({ defaultValues, isEdit = false }) => {
               type="submit"
               color="green"
               className="rounded-md p-5"
-              disabled={isLoading || !isValid || (!isDirty && isEdit)}
+              disabled={isLoading || !isValid || (!isDirty && isEdit) || isSubmitting}
             >
-              {isLoading ? "Cargando..." : isEdit ? "Guardar cambios" : "Crear"}
+              {isLoading ? "Cargando..." :isEdit ? "Guardar cambios" : "Crear"}
             </Button>
           </div>
         </form>
