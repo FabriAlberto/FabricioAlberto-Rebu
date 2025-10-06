@@ -1,4 +1,3 @@
-
 export type EmployeesApiParams = {
   page?: string;
   limit?: string;
@@ -38,8 +37,8 @@ export const getBaseUrl = () => {
   }
 
   // Servidor → necesita absoluto
-  const baseUrl = process.env.VERCEL_URL
-    ? `${process.env.VERCEL_URL}`
+  const baseUrl = process.env.NEXT_PUBLIC_URL_BASE
+    ? `${process.env.NEXT_PUBLIC_URL_BASE}`
     : "http://localhost:3000";
 
   return baseUrl;
