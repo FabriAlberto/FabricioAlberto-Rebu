@@ -6,10 +6,10 @@ import { revalidatePath, revalidateTag } from "next/cache";
 
 export async function createEmployeeAction(employee: Omit<Employee, "id">) {
   try {
-    const data = await apiRebu.createEmployee(employee);
+    await apiRebu.createEmployee(employee);
 
     revalidatePath("/employees");
-    revalidatePath(`/employees/${data.id}`);
+    revalidatePath(`/employees/[id]`);
 
     return { success: true, message: "Empleado creado correctamente" };
   } catch (err) {
@@ -24,9 +24,6 @@ export async function updateEmployeeAction(
   try {
     await apiRebu.updateEmployeeById(employeeId, employee);
 
-    // Revalidar cache con tags específicos
-    revalidateTag("employees");
-    revalidateTag(`employee-${employeeId}`);
     revalidatePath(`/employees/${employeeId}`);
     revalidatePath("/employees");
 
