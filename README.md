@@ -4,6 +4,8 @@
 
 Sistema web desarrollado con Next.js 14 para la gestión de empleados, incluyendo autenticación, CRUD completo, validaciones, tests unitarios, optimizaciones de rendimiento y manejo avanzado de cache para producción en Vercel.
 
+🌐 **Demo en vivo**: [https://fabricio-alberto-rebu.vercel.app/](https://fabricio-alberto-rebu.vercel.app/)
+
 ## 🚀 Instalación y Ejecución
 
 ### Prerrequisitos
@@ -41,6 +43,9 @@ npm run start        # Producción
 ### Credenciales de acceso
 - **Email**: `admin@rebuhr.com`
 - **Contraseña**: `password123`
+
+### Demo en vivo
+🌐 **[https://fabricio-alberto-rebu.vercel.app/](https://fabricio-alberto-rebu.vercel.app/)**
 
 ## 🏗️ Decisiones Técnicas Importantes
 
