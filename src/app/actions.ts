@@ -2,14 +2,14 @@
 
 import { apiRebu } from "@/service/api.service";
 import { Employee } from "@/types/personal";
-import { revalidatePath, revalidateTag } from "next/cache";
+import { revalidatePath } from "next/cache";
 
 export async function createEmployeeAction(employee: Omit<Employee, "id">) {
   try {
     await apiRebu.createEmployee(employee);
 
     revalidatePath("/employees");
-    revalidatePath(`/employees/[id]`);
+    revalidatePath("/employees/[id]", "page");
 
     return { success: true, message: "Empleado creado correctamente" };
   } catch (err) {
@@ -38,10 +38,6 @@ export async function deleteEmployeeAction(employeeId: string) {
   try {
     await apiRebu.deleteEmployee(employeeId);
 
-    // Revalidar cache con tags específicos
-    revalidateTag("employees");
-    revalidateTag("employees-total");
-    revalidateTag(`employee-${employeeId}`);
     revalidatePath(`/employees/${employeeId}`);
     revalidatePath("/employees");
 
