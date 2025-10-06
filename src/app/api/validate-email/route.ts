@@ -13,7 +13,6 @@ export async function POST(req: NextRequest) {
 
     await new Promise(resolve => setTimeout(resolve, 500));
 
-    // Simular validación: algunos emails ya existen
     const existingEmails = [
       "existing@empresa.com",
     ];
