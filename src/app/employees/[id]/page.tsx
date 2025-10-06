@@ -2,12 +2,10 @@ import React from "react";
 import { notFound } from "next/navigation";
 import UsersLayout from "@/components/layout/UsersLayout";
 import EmployeeDetails from "@/components/employee/EmployeeDetails";
-import { Employee } from "@/types/personal";
-import { database } from "@/utils/database";
 import { apiRebu } from "@/service/api.service";
 
-export const revalidate = 60;
-
+/* export const revalidate = 60;
+export const dynamicParams = true;
 export async function generateStaticParams() {
   try {
     const employees = await database.getEmployees();
@@ -19,7 +17,7 @@ export async function generateStaticParams() {
     return [];
   }
 }
-
+ */
 interface EmployeePageProps {
   params: {
     id: string;

@@ -10,10 +10,10 @@ export async function createEmployeeAction(employee: Omit<Employee, "id">) {
 
     // Revalidar cache persistente
     revalidateTag("employees");
-    
+
     // Revalidar páginas estáticas
     revalidatePath("/employees");
-    revalidatePath("/employees/[id]","page");
+    revalidatePath("/employees/[id]");
 
     return { success: true, message: "Empleado creado correctamente" };
   } catch (err) {
