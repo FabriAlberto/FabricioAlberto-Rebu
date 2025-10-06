@@ -4,7 +4,7 @@ interface UseFormDraftProps {
   key: string;
   isEdit?: boolean;
   reset: (values?: any) => void;
-  formValues: any;
+  formValues: any;  // usamos any en ambos casos ya que se podria reutilizar para otros formularios donde la data no es la misma
   isDirty: boolean;
 }
 

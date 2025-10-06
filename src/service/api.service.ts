@@ -8,7 +8,6 @@ export const apiRebu = {
   async createEmployee(employee: Omit<Employee, "id">) {
     try {
       const { data } = await apiClient.post(`/api/employees`, employee);
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error);
